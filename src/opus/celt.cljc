@@ -239,7 +239,12 @@
                         (loop [k 0]
                           (let [k' (inc k)
                                 v  (pvq/v-n-k n k')]
-                            (if (or (> v (bit-shift-left 1 31))
+                            ;; `pvq/two-pow`, not `(bit-shift-left 1 31)`: on
+                            ;; ClojureScript the latter is -2147483648, so this
+                            ;; guard read `(> v -2147483648)` -- true for every
+                            ;; non-negative V(N,K) -- and the loop returned 0 on
+                            ;; its first iteration. Every band got zero pulses.
+                            (if (or (> v (pvq/two-pow 31))
                                     (> (pvq/bit-cost n k') whole-bits))
                               k
                               (recur k')))))))]
