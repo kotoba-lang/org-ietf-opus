@@ -32,7 +32,22 @@
 ;; fixnum -- clamping only ever affects codebooks this decoder would
 ;; refuse to use anyway.
 
-(def ^:private ceiling (bit-shift-left 1 40))
+(defn two-pow
+  "2^n for n in 0..52, exact on both runtimes.
+
+  Not `(bit-shift-left 1 n)`. Every ClojureScript bitwise operator coerces to
+  int32 first, so there the expression is -2147483648 at n=31 (the sign bit),
+  1 at n=32 (the count is taken mod 32) and 256 at n=40. Measured 2026-08-25
+  under nbb; the JVM answers 2147483648, 4294967296 and 1099511627776.
+
+  The paragraph above chose 2^40 precisely because it sits comfortably between
+  the 2^31 decode-time clamp and a JS safe integer. On ClojureScript it was
+  **256** -- below both, and below almost every V(N,K) this decoder computes,
+  so the clamp the comment calls unreachable fired constantly."
+  [n]
+  (loop [i 0 v 1] (if (>= i n) v (recur (inc i) (* v 2)))))
+
+(def ^:private ceiling (two-pow 40))
 
 (def ^:private memo (atom {}))
 
