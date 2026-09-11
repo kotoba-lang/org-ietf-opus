@@ -57,14 +57,14 @@
    PVQ shape decoding (RFC SS4.3.4.2) and spreading (SS4.3.4.3),
    denormalization (SS4.3.6), and the inverse MDCT + synthesis window +
    overlap-add + de-emphasis (SS4.3.7) -- is real math against real,
-   RFC-derived tables, not stubbed or faked. See test/opus/celt_test.clj
+   RFC-derived tables, not stubbed or faked. See test/opus/celt_test.cljk
    for round-trip tests against a companion test-only CELT encoder built
    on the same shared, exported allocation function
    (`compute-band-allocations`) used by this decoder, guaranteeing the two
    sides agree by construction, plus independent hand/spec-derived unit
    tests of each math primitive (opus.pvq / opus.mdct / opus.range-decoder
    tests) and range-decoder cross-checks against the verified RFC 6716
-   Appendix A reference implementation (see test/opus/range_decoder_test.clj)."
+   Appendix A reference implementation (see test/opus/range_decoder_test.cljk)."
   (:require [opus.range-decoder :as rd]
             [opus.pvq :as pvq]
             [opus.mdct :as mdct]))
@@ -215,7 +215,7 @@
    (RFC SS4.3.3's 'total', after anti-collapse/skip/intensity/dual-stereo
    reservations), returns {:pulses [K0..K20] :bits1_8 [...] :q64 q64}. This
    function is shared verbatim by opus.celt (decode) and
-   test/opus/support/celt_encoder.clj, so the two sides can never disagree
+   test/opus/support/celt_encoder.cljk, so the two sides can never disagree
    about how many pulses a band gets."
   [trim boosts budget]
   (let [total-at (fn [q64]

@@ -1,7 +1,7 @@
 (ns opus.portable-width-test
   "The two places in this decoder where `(bit-shift-left 1 n)` was not 2^n.
 
-  `.cljc`, and reachable from `run-tests.cljs`, on purpose. All six source
+  `.cljc`, and reachable from `run-tests.cljk`, on purpose. All six source
   files here are `.cljc` -- a claim that they run on ClojureScript -- and until
   2026-08-25 every test was `.clj` and there was no ClojureScript runner, so
   the claim had never been executed (root ADR-2608730000).

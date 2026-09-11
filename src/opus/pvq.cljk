@@ -102,7 +102,7 @@
    (length n, sum(|x|)=k). Used by test-support encoders (this repo ships
    only a CELT *decoder*; encoding is exposed here because it is the same
    combinatorial bijection, needed to build genuine round-trippable test
-   bitstreams -- see test/opus/support/celt_encoder.clj)."
+   bitstreams -- see test/opus/support/celt_encoder.cljk)."
   [n k x]
   (loop [j 0 k k i 0 x x]
     (if (= j n)
