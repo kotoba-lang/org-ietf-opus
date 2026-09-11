@@ -81,5 +81,5 @@ decoder's exact tables and bit-allocation function, so the two sides can
 never disagree by construction.
 
 ```sh
-clojure -M:test
+kbb -M:test
 ```

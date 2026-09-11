@@ -9,13 +9,13 @@
 
    The `.clj` suites are not listed and are not forgotten: converting them is
    separate work, and until it is done this file covers less than
-   `clojure -M:test` does. The JVM suite remains the primary gate; this is an
+   `kbb -M:test` does. The JVM suite remains the primary gate; this is an
    addition to it.
 
    Anything added to `test/` as `.cljc` belongs in BOTH lists below; being
    required is not being run.
 
-     nbb --classpath \"$(clojure -Spath -M:test)\" run-tests.cljk"
+     kbb --backend sci --classpath \"$(kbb -Spath -M:test)\" run-tests.cljk"
   (:require [cljs.test :as t]
             [opus.portable-width-test]))
 
