@@ -3,7 +3,7 @@
    Table 2 (the config table is a fixed, precisely specified lookup, not
    something that needs a real encoder to validate — unlike H.264 SPS/AAC
    ADTS in the sibling repos, which do)."
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [opus.toc :as toc]))
 
 (deftest silk-config

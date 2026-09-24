@@ -18,7 +18,7 @@
   loop returned on its first iteration and **every band got zero pulses**.
 
   Neither threw. On the JVM both are correct, and all 30 `.clj` tests passed."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [opus.pvq :as pvq]))
 
 (deftest two-pow-is-two-to-the-n-past-the-int32-boundary

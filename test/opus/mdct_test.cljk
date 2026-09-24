@@ -7,7 +7,7 @@
    pointwise agreement is real evidence of correctness, not a tautology.
    The window and analytic-property tests are hand-derived directly from
    the RFC prose formula."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [opus.mdct :as mdct]))
 
 (defn reference-inverse-mdct

@@ -6,7 +6,7 @@
    exhaustive encode/decode round-trip over every one of those enumerated
    vectors (proving `decode-pulses`/`encode-pulses` are exact mutual
    inverses across the whole codebook, not just on cherry-picked inputs)."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [opus.pvq :as pvq]))
 
 (defn- brute-force-vectors
