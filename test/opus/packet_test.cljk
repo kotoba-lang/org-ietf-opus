@@ -1,7 +1,7 @@
 (ns opus.packet-test
   "Frame-packing (RFC 6716 §3.2) checked against hand-computed byte layouts
    for each of the 4 frame-count codes."
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [opus.packet :as pkt]))
 
 (defn- toc-byte [code] (bit-or (bit-shift-left 1 3) code))       ; config=1, stereo=0

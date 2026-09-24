@@ -18,7 +18,7 @@
    directly (small worked examples) plus round-trip coverage via
    opus.support.range-encoder, which itself independently cross-checks
    against the reference (see the vector* tests) so is not circular."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [opus.range-decoder :as rd]
             [opus.support.range-encoder :as re]))
 

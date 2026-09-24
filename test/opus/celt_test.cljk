@@ -8,7 +8,7 @@
    Appendix A reference implementation (see opus.range-decoder-test).
    These are real, deterministic decodes of genuine bitstreams producing
    real PCM -- not fabricated pass-through assertions."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [opus.celt :as celt]
             [opus.support.celt-encoder :as enc]
             [opus.support.range-encoder :as re]))
